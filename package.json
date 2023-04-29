@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@datafire/adyen_binlookupservice": "^3.0.0",
+    "binlookup": "^2.0.1"
+  }
+}
