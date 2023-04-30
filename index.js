@@ -19,10 +19,10 @@ submitButton.addEventListener('click', () => {
         console.log(data);
 
         const relevantData = {
-          "ПЛАТЕЖНАЯ СИСТЕМА:": data.scheme,
-          "ТИП КАРТЫ:": data.type,
-          "КАТЕГОРИЯ КАРТЫ:": data.brand,
-          "СТРАНА:": data.country.name,
+          "ПЛАТІЖНА СИСТЕМА": data.scheme,
+          "ТИП КАРТИ": data.type,
+          "КАТЕГОРІЯ КАРТИ": data.brand,
+          "КРАЇНА": data.country.name,
           "ВАЛЮТА": data.country.currency
         };
 
@@ -36,15 +36,22 @@ submitButton.addEventListener('click', () => {
         const resultElement = document.getElementById('result-data');
         resultElement.innerHTML = '';
         resultElement.appendChild(listElement);
+
+        // Очищаем поле ввода
+        numberInput.value = '';
       })
       .catch(error => {
         // Обработка ошибки
         console.error(error);
         alert('Карта не найдена!');
+
+        // Очищаем поле ввода
+        numberInput.value = '';
       });
   } else {
     // Выводим сообщение об ошибке
     alert('Введите шесть цифр!');
+
     // Очищаем поле ввода
     numberInput.value = '';
   }
